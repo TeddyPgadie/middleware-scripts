@@ -1,6 +1,7 @@
 #!/bin/bash
 #Description: Installation of Sonarqube on CentOS7
 #Author: Ted Gadie 
+#Modified by Fanny G. 2022-02-24
 
 
 echo "Sonarqube installation on Centos 7 in progress ..."
@@ -21,6 +22,21 @@ echo "System in the process of retrieving current ip address..."
 sleep 2
 echo "Below is your IP Address : " 
 sudo ifconfig | grep 192.
+echo
+echo " "
+echo "please use this link to connect to the SonarQube server through the browser. http://$(ifconfig eth1|head -2|tail -1|awk '{print $2}'):9000"
+
+echo " "
+sleep 3
+echo "Please use this to login into the server. Login: admin  Password: admin"
+
+echo " "
+sleep 3
+
+echo "Update your password and access the dashboard. Old Password: admin  New Password: school1"
+echo " "
+sleep 3 
+echo "press enter to be redirected to the SonarQube home screen"
 
 
 
@@ -32,3 +48,4 @@ sudo ifconfig | grep 192.
  
 #sudo firewall-cmd --permanent --add-port=9000/tcp
 #sudo firewall-cmd --reload
+                     echo  "End"
